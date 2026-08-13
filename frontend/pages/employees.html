@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employees — Emporer</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            EMPORER<span>.</span>
+        </div>
+
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/employees">Employees</a>
+            <a href="/employees/me">My Profile</a>
+        </nav>
+
+        <button id="logoutButton" class="logout-button">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+                <p class="eyebrow">
+                    COMPANY MANAGEMENT
+                </p>
+
+                <h1>Employees</h1>
+            </div>
+
+            <div class="user-badge" id="userName">
+                Loading...
+            </div>
+
+        </header>
+
+
+        <section class="welcome-card">
+
+            <p class="eyebrow">
+                EMPLOYEE DIRECTORY
+            </p>
+
+            <h2>Company Employees</h2>
+
+            <p>
+                View employees according to your assigned permissions.
+            </p>
+
+        </section>
+
+
+        <section class="employee-table-container">
+
+            <table class="employee-table">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Salary</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+
+                <tbody id="employeeTableBody">
+                    <tr>
+                        <td colspan="5">
+                            Loading employees...
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+            <p id="employeeMessage"></p>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="/static/js/routeGuard.js"></script>
+<script src="/static/js/auth.js"></script>
+<script src="/static/js/employees.js"></script>
+
+</body>
+
+</html>

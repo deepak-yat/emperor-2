@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard — Emporer</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/static/css/dashboard.css"
+    >
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                EMPORER<span>.</span>
+            </div>
+
+            <nav>
+                <a href="/dashboard/admin">Dashboard</a>
+                <a href="/employees">Employees</a>
+                <a href="/employees/create">Add Employee</a>
+                <a href="/admin/pending-users">Pending Users</a>
+            </nav>
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <div>
+                    <p class="eyebrow">
+                        ADMINISTRATOR
+                    </p>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+                </div>
+
+                <div class="user-badge">
+                    <span id="userName">
+                        Admin
+                    </span>
+                </div>
+
+            </header>
+
+
+            <section class="welcome-card">
+
+                <p class="eyebrow">
+                    SYSTEM ACCESS
+                </p>
+
+                <h2>
+                    Full system control.
+                </h2>
+
+                <p>
+                    Manage employees, users, roles and
+                    access permissions.
+                </p>
+
+            </section>
+
+
+            <section class="account-grid">
+
+                <div class="account-card">
+                    <span>ROLE</span>
+                    <strong>ADMIN</strong>
+                </div>
+
+                <div class="account-card">
+                    <span>EMPLOYEE MANAGEMENT</span>
+                    <strong>FULL ACCESS</strong>
+                </div>
+
+                <div class="account-card">
+                    <span>USER MANAGEMENT</span>
+                    <strong>FULL ACCESS</strong>
+                </div>
+
+                <div class="account-card">
+                    <span>AUTHORIZATION</span>
+                    <strong>FULL ACCESS</strong>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="/static/js/routeGuard.js"></script>
+    <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

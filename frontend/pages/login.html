@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login — Emporer</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/static/css/auth.css"
+    >
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <div class="auth-card">
+
+            <div class="auth-header">
+
+                <a href="/" class="auth-logo">
+                    EMPORER<span>.</span>
+                </a>
+
+                <p>COMPANY MANAGEMENT SYSTEM</p>
+
+            </div>
+
+
+            <div class="auth-content">
+
+                <h1>Welcome back.</h1>
+
+                <p class="auth-subtitle">
+                    Sign in to access your workspace.
+                </p>
+
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label for="username">
+                            USERNAME
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            PASSWORD
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-button"
+                        id="loginButton"
+                    >
+                        <span id="buttonText">
+                            SIGN IN
+                        </span>
+                    </button>
+
+
+                    <p
+                        id="loginMessage"
+                        class="auth-message"
+                    ></p>
+
+                </form>
+
+
+                <div class="auth-footer">
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                    <a href="/register">
+                        Register
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="/static/js/auth.js"></script>
+
+</body>
+
+</html>
