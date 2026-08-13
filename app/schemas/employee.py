@@ -18,3 +18,9 @@ class EmployeeResponse(BaseModel):
     model_config = ConfigDict(
         from_attributes=True
     )
+
+class EmployeeUpdate(BaseModel):
+    name: str
+    email: str
+    salary: float
+    department_id: int

@@ -9,3 +9,7 @@ class RegisterRequest(BaseModel):
     user_name: str
     user_email: str
     user_password: str
+
+class ApproveUserRequest(BaseModel):
+    role_id: int
+
