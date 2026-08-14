@@ -20,9 +20,24 @@ router = APIRouter(
 
 @router.get("/me", response_model=UserResponse)
 def get_me(
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
 ):
-    return current_user
+    role = None
+
+    if current_user.role_id is not None:
+        role = db.get(Role, current_user.role_id)
+
+    return {
+        "user_id": current_user.user_id,
+        "user_name": current_user.user_name,
+        "user_email": current_user.user_email,
+        "employee_id": current_user.employee_id,
+        "role_id": current_user.role_id,
+        "role_name": role.role_name if role else None,
+        "is_approved": current_user.is_approved,
+        "is_active": current_user.is_active
+    }
 
 @router.post("/login")
 def login(

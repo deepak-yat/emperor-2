@@ -1,0 +1,454 @@
+/* =========================================
+   PENDING USERS PAGE
+   ========================================= */
+
+.pending-users-card {
+    margin-top: 30px;
+
+    background: #090909;
+
+    border: 1px solid #252525;
+
+    animation: fadeUp 0.6s ease;
+}
+
+
+/* =========================================
+   PAGE INTRO
+   ========================================= */
+
+.employee-list-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+    animation: fadeUp 0.5s ease;
+}
+
+.employee-list-header h2 {
+    margin: 8px 0 10px;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+.employee-subtitle {
+    margin: 0;
+
+    max-width: 650px;
+
+    color: #666666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   REFRESH BUTTON
+   ========================================= */
+
+.refresh-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 105px;
+
+    padding: 11px 20px;
+
+    background: #ffffff;
+
+    color: #050505;
+
+    border: 1px solid #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.refresh-button:hover {
+    background: #050505;
+
+    color: #ffffff;
+
+    border-color: #555555;
+
+    transform: translateY(-2px);
+}
+
+.refresh-button:active {
+    transform: translateY(0);
+}
+
+.refresh-button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   TABLE WRAPPER
+   ========================================= */
+
+.pending-users-card .table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   TABLE
+   ========================================= */
+
+.pending-users-card .employee-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: auto;
+}
+
+.pending-users-card .employee-table thead {
+    background: #0d0d0d;
+}
+
+.pending-users-card .employee-table th {
+    padding: 17px 20px;
+
+    color: #555555;
+
+    border-bottom: 1px solid #252525;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+}
+
+.pending-users-card .employee-table td {
+    padding: 18px 20px;
+
+    color: #cfcfcf;
+
+    border-bottom: 1px solid #1d1d1d;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    font-size: 13px;
+}
+
+.pending-users-card .employee-table tbody tr {
+    background: #090909;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pending-users-card .employee-table tbody tr:hover {
+    background: #111111;
+}
+
+.pending-users-card .employee-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   USER ID / EMPLOYEE ID
+   ========================================= */
+
+.pending-users-card .employee-table td:first-child,
+.pending-users-card .employee-table td:nth-child(4) {
+    color: #777777;
+
+    font-family: monospace;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   EMAIL
+   ========================================= */
+
+.pending-users-card .employee-table td:nth-child(3) {
+    color: #aaaaaa;
+}
+
+
+/* =========================================
+   ROLE SELECT
+   ========================================= */
+
+.role-select {
+    min-width: 130px;
+
+    padding: 9px 32px 9px 11px;
+
+    background: #050505;
+
+    color: #cccccc;
+
+    border: 1px solid #303030;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    appearance: auto;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.role-select:hover {
+    border-color: #555555;
+
+    background: #0d0d0d;
+}
+
+.role-select:focus {
+    border-color: #888888;
+
+    background: #0d0d0d;
+
+    color: #ffffff;
+}
+
+.role-select option {
+    background: #0b0b0b;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   PENDING STATUS
+   ========================================= */
+
+.pending-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 10px;
+
+    border: 1px solid #333333;
+
+    color: #888888;
+
+    background: #0b0b0b;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   APPROVE BUTTON
+   ========================================= */
+
+.approve-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 82px;
+
+    padding: 9px 14px;
+
+    background: #ffffff;
+
+    color: #050505;
+
+    border: 1px solid #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.approve-button:hover {
+    background: #050505;
+
+    color: #ffffff;
+
+    border-color: #555555;
+
+    transform: translateY(-2px);
+}
+
+.approve-button:active {
+    transform: translateY(0);
+}
+
+.approve-button:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   EMPTY / LOADING STATE
+   ========================================= */
+
+.pending-users-card .table-loading {
+    padding: 55px 20px !important;
+
+    color: #555555 !important;
+
+    text-align: center !important;
+
+    font-size: 13px !important;
+
+    letter-spacing: 0.2px;
+}
+
+.table-message {
+    min-height: 20px;
+
+    margin: 0;
+
+    padding: 14px 20px;
+
+    color: #777777;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   SUBTLE STATUS ANIMATION
+   ========================================= */
+
+.pending-status::before {
+    content: "";
+
+    width: 5px;
+
+    height: 5px;
+
+    margin-right: 7px;
+
+    background: #777777;
+
+    border-radius: 50%;
+
+    animation: pendingPulse 1.8s infinite;
+}
+
+@keyframes pendingPulse {
+
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .employee-list-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .refresh-button {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .pending-users-card .employee-table th,
+    .pending-users-card .employee-table td {
+        padding: 14px;
+
+        font-size: 12px;
+    }
+
+    .role-select {
+        min-width: 115px;
+    }
+
+    .approve-button {
+        min-width: 75px;
+
+        padding: 8px 10px;
+    }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pending Users — Emporer</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/pending-users.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            EMPORER<span>.</span>
+        </div>
+
+        <nav>
+            <a href="/dashboard/admin">
+                Dashboard
+            </a>
+
+            <a href="/employee-list">
+                Employees
+            </a>
+
+            <a href="/pending-users">
+                Pending Users
+            </a>
+
+            <a href="/employees/me">
+                My Profile
+            </a>
+        </nav>
+
+        <button
+            id="logoutButton"
+            class="logout-button"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+                <p class="eyebrow">
+                    ADMINISTRATION
+                </p>
+
+                <h1>
+                    Pending Users
+                </h1>
+            </div>
+
+            <div
+                class="user-badge"
+                id="userName"
+            >
+                Loading...
+            </div>
+
+        </header>
+
+
+        <section class="employee-list-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    ACCOUNT APPROVAL
+                </p>
+
+                <h2>
+                    Registration Requests
+                </h2>
+
+                <p class="employee-subtitle">
+                    Review employees waiting for account approval.
+                </p>
+
+            </div>
+
+            <button
+                id="refreshPendingUsers"
+                class="refresh-button"
+            >
+                Refresh
+            </button>
+
+        </section>
+
+
+        <section class="pending-users-card">
+
+            <div class="table-wrapper">
+
+                <table class="employee-table">
+
+                    <thead>
+                        <tr>
+                            <th>USER ID</th>
+                            <th>USERNAME</th>
+                            <th>EMAIL</th>
+                            <th>EMPLOYEE ID</th>
+                            <th>ROLE</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="pendingUsersBody">
+
+                        <tr>
+                            <td
+                                colspan="7"
+                                class="table-loading"
+                            >
+                                Loading pending users...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p
+                id="pendingMessage"
+                class="table-message"
+            ></p>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="/static/js/routeGuard.js"></script>
+<script src="/static/js/auth.js"></script>
+<script src="/static/js/pending-users.js"></script>
+
+</body>
+
+</html>

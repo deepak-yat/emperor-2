@@ -99,3 +99,9 @@ def employee_list_page():
     return FileResponse(
         FRONTEND_DIR / "pages" / "employee-list.html"
     )
+
+@app.get("/pending-users", include_in_schema=False)
+def pending_users_page():
+    return FileResponse(
+        FRONTEND_DIR / "pages" / "pending-users.html"
+    )

@@ -101,3 +101,10 @@ async function protectPage() {
 }
 
 protectPage();
+if (
+    path === "/pending-users" &&
+    role !== "admin"
+) {
+    window.location.replace("/dashboard");
+    return;
+}

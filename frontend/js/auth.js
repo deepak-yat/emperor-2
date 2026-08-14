@@ -1,3 +1,7 @@
+// ========================================
+// LOGIN
+// ========================================
+
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
@@ -8,6 +12,8 @@ if (loginForm) {
 async function handleLogin(event) {
 
     event.preventDefault();
+
+    console.log("LOGIN JS IS RUNNING");
 
     const username =
         document.getElementById("username").value.trim();
@@ -53,20 +59,22 @@ async function handleLogin(event) {
 
         const data = await response.json();
 
+        console.log(
+            "LOGIN RESPONSE:",
+            response.status,
+            data
+        );
+
 
         if (!response.ok) {
 
             throw new Error(
                 data.detail || "Login failed"
             );
-
         }
 
 
-        /*
-         * The backend returned our JWT.
-         */
-
+        // Store JWT
         localStorage.setItem(
             "access_token",
             data.access_token
@@ -76,13 +84,8 @@ async function handleLogin(event) {
         message.textContent =
             "Login successful.";
 
-
-        /*
-         * Give the user a short visual
-         * confirmation before redirecting.
-         */
-
-        buttonText.textContent = "SUCCESS";
+        buttonText.textContent =
+            "SUCCESS";
 
 
         setTimeout(() => {
@@ -95,6 +98,11 @@ async function handleLogin(event) {
 
     } catch (error) {
 
+        console.error(
+            "LOGIN ERROR:",
+            error
+        );
+
         message.textContent =
             error.message;
 
@@ -102,27 +110,19 @@ async function handleLogin(event) {
             "SIGN IN";
 
         button.disabled = false;
-
     }
-
-}
-
-function logout() {
-
-    localStorage.removeItem("access_token");
-
-    window.location.href = "/login";
 }
 
 
-document
-    .getElementById("logoutButton")
-    ?.addEventListener("click", logout);
+// ========================================
+// REGISTRATION
+// ========================================
 
-    const registerForm =
+const registerForm =
     document.getElementById("registerForm");
 
 if (registerForm) {
+
     registerForm.addEventListener(
         "submit",
         handleRegister
@@ -133,6 +133,7 @@ if (registerForm) {
 async function handleRegister(event) {
 
     event.preventDefault();
+
 
     const username =
         document.getElementById("username").value.trim();
@@ -153,13 +154,14 @@ async function handleRegister(event) {
         document.getElementById("registerButton");
 
     const buttonText =
-        document.getElementById("registerButtonText");
+        document.getElementById(
+            "registerButtonText"
+        );
 
 
     message.textContent = "";
 
 
-    // Client-side password check
     if (password !== confirmPassword) {
 
         message.textContent =
@@ -212,11 +214,17 @@ async function handleRegister(event) {
             data.message ||
             "Registration successful. Waiting for admin approval.";
 
+
         buttonText.textContent =
             "ACCOUNT CREATED";
 
 
     } catch (error) {
+
+        console.error(
+            "REGISTRATION ERROR:",
+            error
+        );
 
         message.textContent =
             error.message;
@@ -227,3 +235,26 @@ async function handleRegister(event) {
             "CREATE ACCOUNT";
     }
 }
+
+
+// ========================================
+// LOGOUT
+// ========================================
+
+function logout() {
+
+    localStorage.removeItem(
+        "access_token"
+    );
+
+    window.location.href =
+        "/login";
+}
+
+
+document
+    .getElementById("logoutButton")
+    ?.addEventListener(
+        "click",
+        logout
+    );
