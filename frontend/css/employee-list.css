@@ -174,3 +174,21 @@
         gap: 15px;
     }
 }
+
+.delete-button {
+    margin-left: 8px;
+
+    background: transparent;
+
+    color: #888;
+
+    border-color: #333;
+}
+
+.delete-button:hover {
+    background: #fff;
+
+    color: #000;
+
+    border-color: #fff;
+}
