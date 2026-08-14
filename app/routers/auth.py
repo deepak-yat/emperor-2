@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from app.dependencies import get_current_user
 from app.schemas.user import UserResponse
 from app.database import get_db
+
 from app.models.user import User
 from app.schemas.auth import LoginRequest
 from app.security.password import verify_password
@@ -11,7 +12,7 @@ from app.security.jwt import create_access_token
 from app.models.employee import Employee
 from app.security.password import hash_password
 from app.schemas.auth import RegisterRequest
-
+from app.models.role import Role
 router = APIRouter(
     prefix="/auth",
     tags=["Authentication"]
@@ -140,4 +141,25 @@ def register(
     return {
         "message": "Registration successful. Waiting for admin approval.",
         "user_id": new_user.user_id
+    }
+
+@router.get("/me", response_model=UserResponse)
+def get_me(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    role = None
+
+    if current_user.role_id is not None:
+        role = db.get(Role, current_user.role_id)
+
+    return {
+        "user_id": current_user.user_id,
+        "user_name": current_user.user_name,
+        "user_email": current_user.user_email,
+        "employee_id": current_user.employee_id,
+        "role_id": current_user.role_id,
+        "role_name": role.role_name if role else None,
+        "is_approved": current_user.is_approved,
+        "is_active": current_user.is_active
     }

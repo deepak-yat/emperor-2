@@ -129,3 +129,39 @@ def view_employee(
  
 
     return employee
+
+@router.delete(
+    "/{employee_id}"
+)
+def delete_employee(
+    employee_id:int,
+    db:Session=Depends(get_db),
+    current_user:User=Depends(
+        require_permission(
+            "/employees/{employee_id}",
+            "DELETE"
+        )
+    )
+):
+    employee = db.get(Employee, employee_id)
+
+    if employee is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Employee not found"
+        )
+    
+    user=db.scalar(
+        select(User).where(
+            User.employee_id==employee_id
+        )
+    )
+    if user:
+        db.delete(user)
+
+    db.delete(employee)
+    db.commit()
+
+    return{
+        "message":"Employee deleted successfully"
+    }

@@ -85,3 +85,117 @@ async function loadEmployees() {
 
     }
 }
+
+const employeeForm =
+    document.getElementById("employeeForm");
+
+if (employeeForm) {
+    employeeForm.addEventListener(
+        "submit",
+        createEmployee
+    );
+}
+
+
+async function createEmployee(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("employeeName").value.trim();
+
+    const email =
+        document.getElementById("employeeEmail").value.trim();
+
+    const salary =
+        Number(
+            document.getElementById("employeeSalary").value
+        );
+
+    const departmentId =
+        Number(
+            document.getElementById("departmentId").value
+        );
+
+    const message =
+        document.getElementById("employeeMessage");
+
+    const button =
+        document.getElementById("employeeSubmitButton");
+
+    const buttonText =
+        document.getElementById("employeeButtonText");
+
+    const token =
+        localStorage.getItem("access_token");
+
+    if (!token) {
+        window.location.href = "/login";
+        return;
+    }
+
+    button.disabled = true;
+    buttonText.textContent = "CREATING...";
+
+    message.textContent = "";
+
+    try {
+
+        const response = await fetch(
+            "/employees",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    salary: salary,
+                    department_id: departmentId
+                })
+            }
+        );
+
+        const data =
+            await response.json();
+
+        if (!response.ok) {
+            throw new Error(
+                data.detail || "Failed to create employee"
+            );
+        }
+
+        message.textContent =
+            "Employee created successfully.";
+
+        message.style.color = "#aaa";
+
+        buttonText.textContent =
+            "CREATED";
+
+        employeeForm.reset();
+
+    } catch (error) {
+
+        console.error(
+            "Create employee error:",
+            error
+        );
+
+        message.textContent =
+            error.message;
+
+        message.style.color = "#aaa";
+
+        buttonText.textContent =
+            "CREATE EMPLOYEE";
+
+    } finally {
+
+        button.disabled = false;
+    }
+}

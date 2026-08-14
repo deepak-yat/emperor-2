@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add Employee — Emporer</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/static/css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/static/css/auth.css"
+    >
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            EMPORER<span>.</span>
+        </div>
+
+        <nav id="sidebarNav">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/employees-page">
+                Employees
+            </a>
+
+            <a href="/employees/create-page">
+                Add Employee
+            </a>
+
+            <a href="/employees/me">
+                My Profile
+            </a>
+            <a href="/employees/delete-employee">Delete Employee</a>
+        </nav>
+
+        <button
+            id="logoutButton"
+            class="logout-button"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    EMPLOYEE MANAGEMENT
+                </p>
+
+                <h1>
+                    Add Employee
+                </h1>
+
+            </div>
+
+            <div
+                class="user-badge"
+                id="userName"
+            >
+                Loading...
+            </div>
+
+        </header>
+
+
+        <section class="welcome-card">
+
+            <p class="eyebrow">
+                CREATE EMPLOYEE
+            </p>
+
+            <h2>
+                Add a new employee
+            </h2>
+
+            <p>
+                Once created, the employee can use
+                their company email to register an account.
+            </p>
+
+        </section>
+
+
+        <section class="form-card">
+
+            <form id="employeeForm">
+
+                <div class="form-group">
+
+                    <label for="employeeName">
+                        NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="employeeName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="employeeEmail">
+                        EMAIL
+                    </label>
+
+                    <input
+                        type="email"
+                        id="employeeEmail"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="employeeSalary">
+                        SALARY
+                    </label>
+
+                    <input
+                        type="number"
+                        id="employeeSalary"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="departmentId">
+                        DEPARTMENT ID
+                    </label>
+
+                    <input
+                        type="number"
+                        id="departmentId"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-button"
+                    id="employeeSubmitButton"
+                >
+                    <span id="employeeButtonText">
+                        CREATE EMPLOYEE
+                    </span>
+                </button>
+
+
+                <p
+                    id="employeeMessage"
+                    class="auth-message"
+                ></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="/static/js/routeGuard.js"></script>
+<script src="/static/js/auth.js"></script>
+<script src="/static/js/employee.js"></script>
+</body>
+
+</html>

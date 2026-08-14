@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manager Dashboard — Emporer</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/static/css/dashboard.css"
+    >
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            EMPORER<span>.</span>
+        </div>
+
+        <nav>
+
+            <a href="/dashboard/manager">
+                Dashboard
+            </a>
+
+            <a href="/employees-page">
+                Employees
+            </a>
+
+            <a href="/employees/me">
+                My Profile
+            </a>
+
+        </nav>
+
+        <button
+            id="logoutButton"
+            class="logout-button"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    MANAGEMENT
+                </p>
+
+                <h1>
+                    Manager Dashboard
+                </h1>
+
+            </div>
+
+            <div
+                class="user-badge"
+                id="userName"
+            >
+                Loading...
+            </div>
+
+        </header>
+
+
+        <section class="welcome-card">
+
+            <p class="eyebrow">
+                WELCOME BACK
+            </p>
+
+            <h2 id="welcomeMessage">
+                Loading...
+            </h2>
+
+            <p>
+                Manage and review your employees.
+            </p>
+
+        </section>
+
+
+        <section class="account-grid">
+
+            <div class="account-card">
+                <span>ROLE</span>
+                <strong>MANAGER</strong>
+            </div>
+
+            <div class="account-card">
+                <span>VIEW EMPLOYEES</span>
+                <strong>ENABLED</strong>
+            </div>
+
+            <div class="account-card">
+                <span>EDIT EMPLOYEES</span>
+                <strong>ENABLED</strong>
+            </div>
+
+            <div class="account-card">
+                <span>ADD EMPLOYEE</span>
+                <strong>RESTRICTED</strong>
+            </div>
+
+        </section>
+
+
+        <section class="quick-actions">
+
+            <h2>
+                Quick Actions
+            </h2>
+
+            <div class="action-grid">
+
+                <a
+                    href="/employees-page"
+                    class="action-card"
+                >
+
+                    <span>
+                        VIEW
+                    </span>
+
+                    <strong>
+                        Employees
+                    </strong>
+
+                    <p>
+                        View company employees
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="/employees/me"
+                    class="action-card"
+                >
+
+                    <span>
+                        PROFILE
+                    </span>
+
+                    <strong>
+                        My Profile
+                    </strong>
+
+                    <p>
+                        View your employee details
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="/static/js/routeGuard.js"></script>
+<script src="/static/js/auth.js"></script>
+<script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

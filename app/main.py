@@ -81,3 +81,21 @@ def employees_page():
     return FileResponse(
         FRONTEND_DIR / "pages" / "employees.html"
     )
+
+@app.get("/dashboard/manager", include_in_schema=False)
+def manager_dashboard_page():
+    return FileResponse(
+        FRONTEND_DIR / "pages" / "dashboards" / "manager.html"
+    )
+
+@app.get("/employees/create-page", include_in_schema=False)
+def create_employee_page():
+    return FileResponse(
+        FRONTEND_DIR / "pages" / "create-employee.html"
+    )
+
+@app.get("/employee-list", include_in_schema=False)
+def employee_list_page():
+    return FileResponse(
+        FRONTEND_DIR / "pages" / "employee-list.html"
+    )
